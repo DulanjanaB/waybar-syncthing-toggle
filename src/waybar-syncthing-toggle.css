@@ -1,7 +1,33 @@
 #custom-syncthing {
   margin: 0 17px;
+  transition: all 0.3s ease;
+}
+
+#custom-syncthing.active {
+  color: #a6e3a1;
 }
 
 #custom-syncthing.stopped {
-  opacity: 0.5;
+  opacity: 0.4;
+  color: #6c7086;
+}
+
+#custom-syncthing.syncing {
+  color: #89b4fa;
+  animation: syncthing-pulse 1.5s ease-in-out infinite;
+}
+
+#custom-syncthing.error {
+  color: #f38ba8;
+  animation: syncthing-blink 0.8s ease-in-out infinite;
+}
+
+@keyframes syncthing-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes syncthing-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
 }
